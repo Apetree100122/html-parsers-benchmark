@@ -3,7 +3,7 @@
 package main
 
 import (
-	"code.google.com/p/go-html-transform/h5"
+        "go.marzhillstudios.com/pkg/go-html-transform/h5"
 	"fmt"
 	"io/ioutil"
 	"os"

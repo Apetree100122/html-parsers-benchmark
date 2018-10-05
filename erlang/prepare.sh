@@ -1,7 +1,8 @@
 #!/bin/bash
 
-wget http://cloud.github.com/downloads/basho/rebar/rebar
-chmod u+x rebar
+wget https://s3.amazonaws.com/rebar3/rebar3
+ chmod +x rebar3
 
-./rebar get-deps
-./rebar compile
+./rebar3 local install
+./rebar3 get-deps
+./rebar3 compile

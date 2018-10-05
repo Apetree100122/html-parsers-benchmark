@@ -3,8 +3,28 @@ HTML parsers benchmark
 
 Simple HTML DOM parser benchmark.
 
-Competitors
------------
+This is on going update of an existing project which is 6 years old.
+
+The current platform support as of today.
+golang nodejs ruby java
+
+The test can be run with Docker which greatly simplify the configuration process.
+
+How to run this ?
+---
+$ make build run
+$ cat report.log
+
+TODO
+---
+ [] Create a better report
+ [] Publish docker image to avoid build step
+ [] Add support for more platforms
+ [] Add new platform rust
+ [] Add more real world tests selecting element in the dom
+
+All Parsers
+---
 
 ### Erlang
 
