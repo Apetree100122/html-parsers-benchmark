@@ -12,16 +12,17 @@ The test can be run with Docker which greatly simplify the configuration process
 
 How to run this ?
 ---
+```bash
 $ make build run
 $ cat report.log
-
+```
 TODO
 ---
- [] Create a better report
- [] Publish docker image to avoid build step
- [] Add support for more platforms
- [] Add new platform rust
- [] Add more real world tests selecting element in the dom
+ - [] Create a better report 
+ - [] Publish docker image to avoid build step
+ - [] Add support for more platforms
+ - [] Add new platform rust
+ - [] Add more real world tests selecting element in the dom
 
 All Parsers
 ---
