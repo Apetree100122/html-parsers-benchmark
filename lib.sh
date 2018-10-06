@@ -12,7 +12,7 @@ timeit () {
 print_header() {
     parser=$1
     test_file=$2
-    echo "---"
+    echo "----------"
     echo "parser:$parser	file:$test_file"
 }
 

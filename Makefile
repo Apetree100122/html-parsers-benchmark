@@ -1,10 +1,14 @@
 # Automate execution with Docker
 #
 
-all: build prepare run
-
+# docker command
 pwd=`pwd`
 docker_cmd=docker run -v $(pwd):/app -it parser_bench
+
+# number of times to repeat the file parsing
+repeat=50
+
+all: build prepare run
 
 .PHONY: run
 
@@ -17,4 +21,11 @@ prepare:
 
 # run test
 run:
-	docker run -v $(pwd):/app -it parser_bench ./run.sh 5 | tee report.log
+	docker run -v $(pwd):/app -it parser_bench ./run.sh $(repeat) | tee report.log
+
+# open a terminal in the container
+debug:
+	$(docker_cmd) /bin/bash
+
+csv:
+	ruby to_csv.rb report.log > report.csv

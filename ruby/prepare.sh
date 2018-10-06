@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo gem install nokogiri
+gem install nokogiri
 
 echo "ok"

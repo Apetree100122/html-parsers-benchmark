@@ -40,7 +40,6 @@ argparser.add_argument(
 
 l1_re = re.compile(r"^parser:([0-9a-zA-Z_.-]+)\tfile:(.*)")
 
-
 def parse_line1(line):
     match = l1_re.search(line)
     parser = match.group(1).split("/")[-1]
@@ -48,7 +47,6 @@ def parse_line1(line):
     return parser, filepath
 
 l2_re = re.compile(r"^([0-9.]+)( s)?")
-
 
 def parse_line2(line):
     match = l2_re.search(line)
@@ -90,6 +88,7 @@ class Parser(object):
 
     def do_parse_line(self, line):
         c = self
+        print(line)
         if c.state == PLATFORM_HDR:
             c.r["platform"] = line.strip()
             c.state = PLATFORM
@@ -110,7 +109,7 @@ class Parser(object):
             return r
         elif line.startswith("==="):
             c.state = PLATFORM_HDR
-        elif line.startswith("***"):
+        elif line.startswith("---"):
             c.state = TEST_HDR
         else:
             raise ValueError('Invalid input: "{0}"'.format(line))

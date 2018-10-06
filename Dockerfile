@@ -25,8 +25,14 @@ RUN npm install -g node-gyp
 # Erlang
 RUN apt-get install -y erlang-asn1 time zlib1g zlib1g-dev
 
-ENV GEM_HOME /app/ruby
+# Ruby environment
+ENV GEM_HOME /app/ruby/gem
+ENV GEM_PATH /app/ruby/gem
+
+# Go environment
 ENV GOPATH /app/golang
+
+# Java / Maven
 ENV MAVEN_HOME /app/java
 #ENV M2_HOME /app/java
 
@@ -41,9 +47,12 @@ WORKDIR /app
 # golang : one parser library was redesigned
 
 # working
-ENV PLATFORMS="golang nodejs ruby java"
+ENV PLATFORMS="golang nodejs ruby"
 
-# RUN ./prepare.sh
+#ENV PLATFORMS="ruby"
 
-# RUN ./run 5000 | tee run.log
-
+# user command example
+# ./prepare.sh
+#  ./run 5000 | tee run.log
+#
+# see Makefile for usage

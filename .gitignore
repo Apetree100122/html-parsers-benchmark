@@ -1,0 +1,17 @@
+# ignore cached file
+golang/src/go.marzhillstudios.com/
+golang/src/golang.org/
+java/benchmark.jar
+java/target/
+nodejs/package-lock.json
+nodejs/node_modules/
+report.log
+report.cs
+ruby/bin/
+ruby/cache/
+ruby/doc/
+ruby/extensions/
+ruby/gems/
+ruby/mini_portile2-2.3.0.gem
+ruby/nokogiri-1.8.5.gem
+ruby/specifications/
