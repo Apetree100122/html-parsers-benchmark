@@ -1,4 +1,5 @@
 # ignore cached file
+java/.m2/
 golang/src/go.marzhillstudios.com/
 golang/src/golang.org/
 java/benchmark.jar
