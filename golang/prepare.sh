@@ -7,14 +7,13 @@ export GOPATH=$DIR
 
 # Download source code to $GOPATH/src/
 go get github.com/moovweb/gokogiri
-go get go.marzhillstudios.com/pkg/go-html-transform/h5
-tar -xzf go-2c8a88c1efce-exp-html.tar.gz -C $DIR/src
+go get github.com/antchfx/xquery
+
+# Delete binaries
+rm -rf bin/
 
 # Compile & write binaries to $GOPATH/bin/
 go install bench_gokogiri
-go install bench_exp_html 
-
-# need to upgrade the code because of library changes
-#go install bench_h5
+go install bench_antchfx
 
 echo "ok"
