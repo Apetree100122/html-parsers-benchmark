@@ -13,18 +13,18 @@ The test can be run with Docker which greatly simplify the configuration process
 How to run this ?
 ---
 ```bash
-$ make build run
+$ make all csv
 $ cat report.log
 ```
 TODO
 ---
- - [] Create a better report 
+ - [x] Create a better report
  - [] Publish docker image to avoid build step
  - [] Add support for more platforms
  - [] Add new platform rust
  - [] Add more real world tests selecting element in the dom
 
-All Parsers
+All Parsers - not all supported yet
 ---
 
 ### Erlang
