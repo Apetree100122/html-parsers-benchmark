@@ -5,19 +5,32 @@ var jsdom = require("jsdom");
 var fs = require('fs');
 const { JSDOM } = jsdom;
 
-    var filename = process.argv[2], n = parseInt(process.argv[3]);
+var filename = process.argv[2], n = parseInt(process.argv[3]);
+var enable_xpath = false;
+if(process.argv.length == 5 && process.argv[4] == 'true' ){
+    enable_xpath = true;
+}
 
-    var html = fs.readFileSync(filename);
+var html = fs.readFileSync(filename);
+var links;
+var start = new Date();
+for (var i=0; i < n; i++) {
+    var dom = new JSDOM(html);
 
-    var start = new Date();
-    for (var i=0; i < n; i++) {
-        var tree = new JSDOM(html);
-/*                        null,
-                        {features: {
-                            FetchExternalResources: false,
-                            ProcessExternalResources: false
-                        }});*/
+    if(enable_xpath) {
+        links = dom.window.document.querySelectorAll("a");
     }
-    var end = new Date();
 
-    console.log('%d s', (end - start) / 1000);
+/*                        null,
+                    {features: {
+                        FetchExternalResources: false,
+                        ProcessExternalResources: false
+                    }});*/
+}
+var end = new Date();
+
+console.log('%d s', (end - start) / 1000);
+
+if(enable_xpath) {
+    console.log("%d links", links.length)
+}
