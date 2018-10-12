@@ -47,9 +47,7 @@ WORKDIR /app
 # golang : one parser library was redesigned
 
 # working
-ENV PLATFORMS="golang nodejs ruby"
-
-#ENV PLATFORMS="ruby"
+ENV PLATFORMS="golang nodejs ruby java"
 
 # user command example
 # ./prepare.sh

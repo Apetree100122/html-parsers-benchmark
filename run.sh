@@ -12,6 +12,7 @@ fi
 
 testfiles=`ls page_*.html`
 num_iterations=$1
+enable_xpath=$2
 
 for tst in $PLATFORMS; do
     if [ -d $tst ]; then
@@ -23,7 +24,7 @@ for tst in $PLATFORMS; do
         # can use GNU parallel for parallel (by HTML page) test execution
         # echo "$testfiles" | parallel --gnu -k -j 6 "./run.sh ../{} $num_iterations"
         for testfile in $testfiles; do
-            ./run.sh "../$testfile" $num_iterations
+            ./run.sh "../$testfile" $num_iterations $enable_xpath
         done
         cd ../
     fi
