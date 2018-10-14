@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	var linkCount int
+
 	if len(os.Args) < 3 {
 		fmt.Println("Usage:", os.Args[0], "filename iteration enable_xpath")
 		os.Exit(1)
@@ -33,7 +35,6 @@ func main() {
 	}
 
 	start := time.Now()
-	var count int
 	for i := 0; i < n; i++ {
 		// Parse HTML document.
 		doc, err := htmlquery.Parse(file)
@@ -42,14 +43,19 @@ func main() {
 		}
 
 		if enableXpath {
-			count = len(htmlquery.Find(doc, "//a/@href"))
+			// Extremly buggy API
+			i := len(htmlquery.Find(doc, "//a/@href"))
+			if i > 0 {
+				linkCount = i
+			}
 		}
+		doc = nil
 	}
 	end := time.Now()
 
 	fmt.Printf("%f s\n", end.Sub(start).Seconds())
 
 	if enableXpath {
-		fmt.Printf("%d links\n", count)
+		fmt.Printf("%d links\n", linkCount)
 	}
 }
