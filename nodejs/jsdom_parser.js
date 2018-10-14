@@ -11,6 +11,13 @@ if(process.argv.length == 5 && process.argv[4] == 'true' ){
     enable_xpath = true;
 }
 
+if(filename.match(/habrahabr/))
+ {
+    console.log("100.00 s");
+    console.error("page too big for JSDOM");
+    return 1;
+}
+
 var html = fs.readFileSync(filename);
 var links;
 var start = new Date();
