@@ -1,7 +1,0 @@
-name:  dart
-description:  A sample application
-
-dependencies:
-  html5lib: any
-#  js: any
-#  unittest: { sdk: unittest }
