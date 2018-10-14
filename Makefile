@@ -8,7 +8,7 @@ enable_xpath="true"
 docker_cmd=docker run -v $(pwd):/app -it parser_bench
 
 # number of times to repeat the file parsing
-repeat=1
+repeat=20
 
 all: build fetch_all run_all
 
