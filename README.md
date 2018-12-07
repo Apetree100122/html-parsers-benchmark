@@ -1,21 +1,28 @@
-HTML parsers benchmark
+HTML parser standardize benchmark
 ======================
 
-Simple HTML DOM parser benchmark.
-
-This is on going update of an existing project which is 6 years old.
+Simple HTML DOM parser benchmark in the most popular programming language.
 
 The current platform support as of today.
-golang nodejs ruby java
+ * c-libxml2
+ * golang
+ * java
+ * nodejs
+ * perl
+ * python
+ * ruby
 
 The test can be run with Docker which greatly simplify the configuration process.
+
+This project is sponsort by https://serpapi.com
 
 How to run this ?
 ---
 ```bash
 $ make all csv
-$ cat report.log
+$ cat report.csv
 ```
+
 TODO
 ---
  - [x] Create a better report
@@ -23,6 +30,10 @@ TODO
  - [x] Add support for more platforms
  - [ ] Add new platform rust
  - [ ] Add more real world tests selecting element in the dom
+ 
+Note
+---
+This is on going update of an existing project which is 6 years old.
 
 All Parsers - not all supported yet
 ---
