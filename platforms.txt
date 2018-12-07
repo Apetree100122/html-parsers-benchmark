@@ -1,13 +1,7 @@
 c-libxml2
-dart
-erlang
 golang
-haskell
 java
-mono
 nodejs
 perl
-php-tidy
-pypy
 python
 ruby
