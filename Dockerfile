@@ -5,14 +5,13 @@ RUN apt-get update
 
 RUN apt-get install -y \
     libxml2-dev libxslt1-dev build-essential \
-    erlang-base \
     cabal-install libicu-dev \
     golang \
     ruby ruby-dev \
-    maven2 default-jdk 
+    maven2 default-jdk \
+    python-virtualenv python-lxml \
+    pypy 
 #    php5-cli php5-tidy \
-#    python-virtualenv python-lxml \
-#    pypy  \
 #    mono-runtime mono-dmcs
 
 RUN apt-get install -y sudo git libxml2 wget pkg-config tar curl
@@ -47,7 +46,7 @@ WORKDIR /app
 # golang : one parser library was redesigned
 
 # working
-ENV PLATFORMS="golang nodejs ruby java c-libxml2 perl"
+ENV PLATFORMS="golang nodejs ruby java c-libxml2 perl python"
 
 # user command example
 # ./prepare.sh

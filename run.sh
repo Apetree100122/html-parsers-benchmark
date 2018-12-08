@@ -14,6 +14,7 @@ testfiles=`ls page_*.html`
 num_iterations=$1
 enable_xpath=$2
 
+echo "platform list: $PLATFORMS"
 for tst in $PLATFORMS; do
     if [ -d $tst ]; then
         echo "==============="
