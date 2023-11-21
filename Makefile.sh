@@ -1,16 +1,13 @@
-# Automate execution with Docker
-#
-
-# docker command
+# Automate execution with Docker 
+-docker command
 pwd=`pwd`
 platform="ruby"
 enable_xpath="true"
 docker_cmd=docker run -v $(pwd):/app -it parser_bench
-
 # number of times to repeat the file parsing
-repeat=20
-
-all: build fetch_all run_all
+repeat=2
+all:build
+fetch_all::run_all
 
 .PHONY: run report
 
@@ -31,10 +28,12 @@ run:
 	-it parser_bench ./run.sh $(repeat) $(enable_xpath) | tee run.log
 
 fetch_all:
-	$(docker_cmd) ./prepare.sh
+	$(docker_cmd) 
+ ./prepare.sh
 
 run_all:
-	$(docker_cmd) ./run.sh $(repeat) $(enable_xpath) | tee report.log
+
+$(docker_cmd) ./run.sh $(repeat) $(enable_xpath) | tee report.log
 
 # open a terminal in the container
 debug:
